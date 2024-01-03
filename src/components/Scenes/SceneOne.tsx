@@ -18,23 +18,15 @@ export default function SceneOne(props: ScenePropType) {
     const HeroFriend = Character({ imageUrl: '/Assets/Friend.png', styleNames: " w-[700px]", isRight: true });
 
     const heroDialogueArray: string[] = [
-        "test test test test test test test test test test test test ",
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
+        "New day, New School Hope I'll get some company",
+        "Yes, I am Prem",
+        "Sure... What is that in your hand[drugs]",
     ]
 
     const heroFriendDialogueArray: string[] = [
-        "test",
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
+        "Hey you look new. Are you the new kid?",
+        "I am vikas and we both are from the same class, come let me show you around.",
+        "Those are some fun stuffs, no worries you'll become familiar with it very soon",
     ]
     return (
         <div>
