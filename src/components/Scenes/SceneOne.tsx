@@ -12,7 +12,7 @@ export default function SceneOne() {
     const HeroFriend = Character({ imageUrl: '/Assets/Friend.png', styleNames: " w-[700px]", isRight: true });
 
     const heroDialogueArray: string[] = [
-        "test",
+        "test test test test test test test test test test test test ",
         "test1",
         "test2",
         "test3",
