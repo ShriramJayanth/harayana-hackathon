@@ -12,23 +12,11 @@ export default function ScentTwo() {
     const Hero = Character({ imageUrl: '/Assets/Hero.png', isRight: true });
 
     const momDialogueArray: string[] = [
-        "test test test test test test test test test test test test ",
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
+        "Hi beta how was school today",
     ]
 
     const heroDialogueArray: string[] = [
-        "test",
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
+        "Fine ma",
     ]
     return (
         <div>
