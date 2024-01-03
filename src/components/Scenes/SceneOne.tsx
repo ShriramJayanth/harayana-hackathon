@@ -2,8 +2,14 @@
 import React from 'react';
 import Character from '../Character';
 import Scene from '../Scene'
+import { type } from 'os';
 
-export default function SceneOne() {
+
+export type ScenePropType = {
+    changeScene: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export default function SceneOne(props: ScenePropType) {
     //states
     const [heroDialogue, setHeroDialogue] = React.useState(0);
     const [heroFriendDialogue, setHeroFriendDialogue] = React.useState(0);
@@ -37,10 +43,14 @@ export default function SceneOne() {
                     setHeroDialogue(prev => prev + 1);
                     setIsHero(prev => !prev);
                 } else {
+                    if (heroFriendDialogue === heroFriendDialogueArray.length - 1) {
+                        props.changeScene(sceneNumber => sceneNumber + 1);
+                    }
                     setHeroFriendDialogue(prev => prev + 1);
                     setIsHero(prev => !prev);
                 }
-            }} >
+            }
+            } >
                 <Hero dialogue={heroDialogueArray[heroDialogue]} hidden={!isHero} />
                 <HeroFriend dialogue={heroFriendDialogueArray[heroFriendDialogue]} hidden={isHero} />
             </Scene>

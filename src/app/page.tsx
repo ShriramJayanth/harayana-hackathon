@@ -1,29 +1,33 @@
 "use client";
 import React from 'react';
-import SceneOne from "@/components/Scenes/SceneOne";
+import SceneOne, { ScenePropType } from "@/components/Scenes/SceneOne";
 import ScentTwo from "@/components/Scenes/ScentTwo";
 
 type SceneType = {
-  component: React.ReactNode;
+  component: (props: ScenePropType) => React.JSX.Element;
   title: string;
 }
 
 export default function Home() {
   //states
-  const [scentNumber, setSceneNumber] = React.useState(0);
+  const [sceneNumber, setSceneNumber] = React.useState(0);
 
   const playSequence: SceneType[] = [
     {
-      component: <SceneOne />,
+      component: SceneOne,
       title: "Scene One"
     },
     {
-      component: <ScentTwo />,
+      component: ScentTwo,
       title: "Scene Two"
     }
   ]
 
+  const CurrentComponent = playSequence[sceneNumber].component;
+
   return (
-    <ScentTwo />
+    <div>
+      <CurrentComponent changeScene={setSceneNumber} />
+    </div>
   );
 }
